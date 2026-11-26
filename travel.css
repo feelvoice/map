@@ -22,6 +22,16 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "LXGW WenKai Lite";
+  src: url("./fonts/lxgw-wenkai-lite-light-footer.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  unicode-range: U+3002, U+4E00, U+56DB, U+58F0, U+5982, U+5E1B, U+5F26, U+5F53,
+    U+5FC3, U+62E8, U+6536, U+66F2, U+753B, U+7EC8, U+88C2, U+FF0C;
+}
+
 :root {
   color-scheme: light;
   --ink: #202723;
@@ -157,17 +167,46 @@ h1, h2 { font-weight: 400; }
   font: 400 clamp(2.5rem, 4.3vw, 3.75rem)/1 var(--serif);
 }
 
-.site-footer a:hover { text-decoration: underline; }
-
 .site-footer {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  margin-top: clamp(3rem, 8vw, 7rem);
-  padding-block: 1.5rem 2.5rem;
+  gap: .5rem 2rem;
+  margin-top: clamp(2.5rem, 6vw, 5rem);
+  padding-block: 1.125rem 2rem;
   border-top: 1px solid var(--line);
-  color: var(--muted);
-  font-size: .9375rem;
+}
+
+.footer-verse {
+  color: #34463e;
+  font-family: "LXGW WenKai Lite", "Songti SC", SimSun, serif;
+  font-size: clamp(.9375rem, 1.4vw, 1.125rem);
+  font-weight: 300;
+  letter-spacing: .08em;
+  line-height: 1.8;
+}
+
+.footer-verse span { white-space: nowrap; }
+
+.footer-home {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  min-height: 2.75rem;
+  color: var(--green);
+  font-size: .875rem;
+  font-weight: 600;
+}
+
+.footer-home:hover { text-decoration: underline; text-underline-offset: .25em; }
+
+@media (max-width: 36rem) {
+  .site-footer {
+    flex-wrap: wrap;
+    padding-block: 1.125rem 1.5rem;
+  }
+
+  .footer-home { margin-inline-start: auto; }
 }
 
 dialog {
