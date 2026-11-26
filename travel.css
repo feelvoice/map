@@ -169,7 +169,7 @@ h1, h2 { font-weight: 400; }
 .map-total-phrase { display: inline-block; }
 .map-total-number {
   color: var(--green);
-  font-size: 1.15em;
+  font-size: 2em;
   font-weight: 600;
   line-height: 1;
 }
