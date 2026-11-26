@@ -90,6 +90,13 @@ h1, h2 { font-weight: 400; }
 
 .map-figure { position: relative; padding-top: clamp(.5rem, 1.5vw, 1.5rem); }
 .world-map { display: block; width: 100%; height: auto; }
+
+body:has(#embed:target) :is(.map-quote, .map-summary, .site-footer) { display: none; }
+#embed:target { padding-top: 0; }
+body:has(#embed:target) dialog {
+  max-height: calc(100% - 1rem);
+  padding: clamp(.75rem, 4vh, 1.75rem);
+}
 .land { fill: #dee9e0; stroke: #fff; stroke-width: .7; stroke-linejoin: round; }
 .world-map [data-visited] { fill: var(--visited); }
 .map-point { stroke: #fff; stroke-width: 1.2; vector-effect: non-scaling-stroke; }
