@@ -91,9 +91,18 @@ h1, h2 { font-weight: 400; }
 .map-figure { position: relative; padding-top: clamp(.5rem, 1.5vw, 1.5rem); }
 .world-map { display: block; width: 100%; height: auto; }
 
-body:has(#embed:target) :is(.map-quote, .map-summary, .site-footer) { display: none; }
-#embed:target { padding-top: 0; }
-body:has(#embed:target) dialog {
+body:has(:is(#embed, #embed-with-summary):target) :is(.map-quote, .site-footer),
+body:has(#embed:target) .map-summary { display: none; }
+
+#embed:target,
+#embed-with-summary:target .map-figure { padding-top: 0; }
+
+#embed-with-summary:target .map-summary {
+  width: 100%;
+  margin-top: .5rem;
+}
+
+body:has(:is(#embed, #embed-with-summary):target) dialog {
   max-height: calc(100% - 1rem);
   padding: clamp(.75rem, 4vh, 1.75rem);
 }
